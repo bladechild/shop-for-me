@@ -5,7 +5,7 @@
 import { useEffect, useState } from "react";
 import { db } from "../../../firebase";
 import { useParams } from "react-router";
-import img from "../../../assets/img/icon-user.svg";
+import img from "../../../assets/Img/icon-user.svg";
 import ReviewProposalsPageHeader from "./../ReviewProposalsPageHeader/ReviewProposalsPageHeader";
 import { Link } from "react-router-dom";
 import Loader from './../../SharedComponents/Loader/Loader';

@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import firebase from "firebase/app";
+import firebase from "firebase/compat/app";
 import { db } from "../../../firebase";
 import { updateJob } from "../../../Network/Network";
 import "./PostJobReview.css";

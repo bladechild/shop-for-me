@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { auth, db } from "../../../firebase";
 import IncomeMsg from "./IncomeMsg";
 import OutgoingMsg from "./OutgoingMsg";
-import firebase from 'firebase/app';
+import firebase from 'firebase/compat/app';
 let unSubscribe;
 
 export default function MesssagesContent() {
@@ -20,7 +20,7 @@ export default function MesssagesContent() {
   }, []);
 
   const getMsgs = () => {
-    unSubscribe = db.collection("messages").doc("IpWoNPxWvjnEnXymHpY6").onSnapshot(Msgs => {
+    unSubscribe = db.collection("messages").doc("PIwKwn2uVae1aHxzgERh").onSnapshot(Msgs => {
       Msgs.data().messages && setMessages([...Msgs.data().messages]);
       el && (el.scrollTop = el.scrollHeight - el.clientHeight);
     });

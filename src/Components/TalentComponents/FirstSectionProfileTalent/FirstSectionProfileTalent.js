@@ -3,19 +3,19 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Link, useHistory, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import ShowMore from 'react-show-more-button/dist/module';
+import ShowMore from 'react-show-more-button';
 import { updateUserData } from "../../../Network/Network";
 import { db, storage } from "../../../firebase";
-import img from "../../../assets/img/icon-user.svg";
+import img from "../../../assets/Img/icon-user.svg";
 import Loader from "../../SharedComponents/Loader/Loader";
 
 
 export default function FirstSectionProfileTalent() {
 
   const { id } = useParams();
-  const { push, location } = useHistory();
+  const { push, location } = useNavigate();
   const clientRoute = location.pathname.includes("talent-profile");
   const lang = useSelector(state => state.lang);
 

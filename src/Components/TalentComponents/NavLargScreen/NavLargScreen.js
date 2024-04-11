@@ -3,19 +3,19 @@
 import React, { useEffect } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { auth } from "../../../firebase";
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import LanguageList from "../../SharedComponents/LanguageBtn/LanguageList";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { talentDataAction } from "../../../Store/actions/talentData";
-import img from "../../../assets/img/icon-user.svg";
+import img from "../../../assets/Img/icon-user.svg";
 
 
 export default function NavLargScreen() {
 
   const { pathname } = useLocation();
   const { t } = useTranslation();
-  const { push } = useHistory();
+  const push = useNavigate();
   let lang = useSelector(state => state.lang);
   const user = useSelector(state => state.talentData);
   const dispatch = useDispatch();

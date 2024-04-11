@@ -5,13 +5,12 @@ import MesssagesContent from "../../Components/SharedComponents/MessagesContent/
 import MessagesLeftSide from "../../Components/SharedComponents/MesssagesLeftSide/MessagesLeftSide";
 
 export default function Messages({ location }) {
-  console.log(location.state);
   return (
     <>
       <div className="container-fluid">
         <div className="row">
           <aside className="col-3 d-none-md">
-            <MessagesLeftSide talentID={location.state} />
+            <MessagesLeftSide talentID={location?.state || ''} />
           </aside>
           <div className="col-sm-12 col-md-9">
             <MesssagesContent />

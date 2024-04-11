@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import { Switch, Route } from 'react-router-dom';
-import PostJobAside from '../../../Components/ClientComponents/PostJobAside/PostJobAside'
+import React, { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import PostJobAside from '../../../Components/ClientComponents/PostJobAside/PostJobAside';
 import PostJobTitle from './../../../Components/ClientComponents/PostJobTitle/PostJobTitle';
 import PostJobDescription from './../../../Components/ClientComponents/PostJobDescription/PostJobDescription';
 import PostJobDetails from './../../../Components/ClientComponents/PostJobDetails/PostJobDetails';
@@ -11,13 +11,12 @@ import PostJobReview from './../../../Components/ClientComponents/PostJobReview/
 import PostJobGetStarted from './../../../Components/ClientComponents/PostJobGetStarted/PostJobGetStarted';
 
 export default function PostJob() {
-
     let [start, setStart] = useState(false);
 
     const isStart = () => {
         start = true;
         setStart(start);
-    }
+    };
 
     const [btns, setBtns] = useState({
         title: true,
@@ -26,46 +25,100 @@ export default function PostJob() {
         expertise: true,
         visibility: true,
         budget: true,
-        review: true
-    })
+        review: true,
+    });
 
     return (
-        <section className="sec-bg-cn p-4">
-            <div className="container">
-                <div className="row">
-                    <div className="col-lg-3">
+        <section className='sec-bg-cn p-4'>
+            <div className='container'>
+                <div className='row'>
+                    <div className='col-lg-3'>
                         <PostJobAside btns={btns} />
                     </div>
-                    <div className="col-lg-9">
-                        <Switch>
-                            <Route path="/post-job" exact>
-                                <PostJobGetStarted start={start} isStart={isStart} setBtns={setBtns} btns={btns} />
-                            </Route>
-                            <Route path="/post-job/title" exact>
-                                <PostJobTitle setBtns={setBtns} btns={btns} />
-                            </Route>
-                            <Route path="/post-job/description" exact>
-                                <PostJobDescription setBtns={setBtns} btns={btns} />
-                            </Route>
-                            <Route path="/post-job/details" exact>
-                                <PostJobDetails setBtns={setBtns} btns={btns} />
-                            </Route>
-                            <Route path="/post-job/expertise" exact>
-                                <PostJobExpertise setBtns={setBtns} btns={btns} />
-                            </Route>
-                            <Route path="/post-job/visibility" exact>
-                                <PostJobVisibility setBtns={setBtns} btns={btns} />
-                            </Route>
-                            <Route path="/post-job/budget" exact>
-                                <PostJobBudget setBtns={setBtns} btns={btns} />
-                            </Route>
-                            <Route path="/post-job/review" exact>
-                                <PostJobReview />
-                            </Route>
-                        </Switch>
+                    <div className='col-lg-9'>
+                        <Routes>
+                            <Route
+                                path='/post-job'
+                                exact
+                                element={
+                                    <PostJobGetStarted
+                                        start={start}
+                                        isStart={isStart}
+                                        setBtns={setBtns}
+                                        btns={btns}
+                                    />
+                                }
+                            />
+                            <Route
+                                path='/post-job/title'
+                                exact
+                                element={
+                                    <PostJobTitle
+                                        setBtns={setBtns}
+                                        btns={btns}
+                                    />
+                                }
+                            />
+                            <Route
+                                path='/post-job/description'
+                                exact
+                                element={
+                                    <PostJobDescription
+                                        setBtns={setBtns}
+                                        btns={btns}
+                                    />
+                                }
+                            />
+                            <Route
+                                path='/post-job/details'
+                                exact
+                                element={
+                                    <PostJobDetails
+                                        setBtns={setBtns}
+                                        btns={btns}
+                                    />
+                                }
+                            />
+                            <Route
+                                path='/post-job/expertise'
+                                exact
+                                element={
+                                    <PostJobExpertise
+                                        setBtns={setBtns}
+                                        btns={btns}
+                                    />
+                                }
+                            />
+                            <Route
+                                path='/post-job/visibility'
+                                exact
+                                element={
+                                    <PostJobVisibility
+                                        setBtns={setBtns}
+                                        btns={btns}
+                                    />
+                                }
+                            />
+                            <Route
+                                path='/post-job/budget'
+                                exact
+                                element={
+                                    <PostJobBudget
+                                        setBtns={setBtns}
+                                        btns={btns}
+                                    />
+                                }
+                            />
+                            <Route
+                                path='/post-job/review'
+                                exact
+                                element={<PostJobReview />}
+                            />
+                        </Routes>
                     </div>
                 </div>
             </div>
         </section>
-    )
+    );
 }
+

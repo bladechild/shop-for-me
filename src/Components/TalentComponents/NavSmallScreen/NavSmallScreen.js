@@ -2,18 +2,18 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from "react";
 import HeaderSearchSm from "../../SharedComponents/HeaderSearchSm/HeaderSearchSm";
-import { Link, NavLink, useHistory } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import firebaseApp, { auth } from "../../../firebase";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
-import img from "../../../assets/img/icon-user.svg";
+import img from "../../../assets/Img/icon-user.svg";
 import { talentDataAction } from "../../../Store/actions/talentData";
 
 
 export default function NavSmallScreen() {
   let lang = useSelector(state => state.lang);
   const { t } = useTranslation();
-  const { push } = useHistory();
+  const push = useNavigate();
   const user = useSelector(state => state.talentData);
   const dispatch = useDispatch();
   useEffect(() => {

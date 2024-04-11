@@ -1,14 +1,14 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
-import { Route, Switch, NavLink } from "react-router-dom";
+import { Route, Routes, NavLink } from "react-router-dom";
 import ContractEarnings from '../../../Components/TalentComponents/ContractEarnings/ContractEarnings';
 import ContractFeedback from '../../../Components/TalentComponents/ContractFeedback/ContractFeedback';
-import img from "../../../assets/img/icon-user.svg";
+import img from "../../../assets/Img/icon-user.svg";
 import "../../ClientPages/Talent/Talent.css";
 import { db } from "../../../firebase";
 import { useSelector } from "react-redux";
-import firebase from 'firebase/app';
+import firebase from 'firebase/compat/app';
 import StarsRating from "../../../Components/SharedComponents/StarsRating/StarsRating";
 
 export default function Contract({ location }) {
@@ -140,14 +140,14 @@ export default function Contract({ location }) {
                             </li>
                         }
                     </ul>
-                    <Switch>
+                    <Routes>
                         <Route path="/contract" exact>
                             <ContractEarnings job={job} client={client} clientContract={clientContract} />
                         </Route>
                         <Route path="/contract/feedback" exact>
                             <ContractFeedback job={job} />
                         </Route>
-                    </Switch>
+                    </Routes>
                 </div>
 
             </div>

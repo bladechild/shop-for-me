@@ -1,6 +1,6 @@
 import React from 'react'
 import { db } from '../../../firebase';
-import firebase from 'firebase/app';
+import firebase from 'firebase/compat/app';
 
 export default function Payment({ job, talent, clientContract }) {
     console.log(clientContract);

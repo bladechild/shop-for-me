@@ -3,14 +3,14 @@
 import React, { useContext, useEffect } from 'react'
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useHistory } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { SearchContext } from '../../../Context/SearchContext';
 import { talentsDataAction } from '../../../Store/actions/talentsDataAction';
 
 
 export default function HeaderSearchLg() {
   const { t } = useTranslation();
-  const { push } = useHistory();
+  const push = useNavigate();
   const talents = useSelector((state) => state.talentsData);
   const { talentSearchList, settalentSearchList, settalentArr } = useContext(SearchContext)
   const dispatch = useDispatch();

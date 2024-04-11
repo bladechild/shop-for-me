@@ -1,8 +1,8 @@
 import React from "react";
-import { useHistory } from "react-router";
+import { useNavigate } from "react-router";
 
 export default function PageNotFound() {
-  const { goBack } = useHistory();
+  const { goBack } = useNavigate();
   return (
     <>
       <div

@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react'
 import { auth, db } from '../../../firebase'
-import firebase from 'firebase/app';
+import firebase from 'firebase/compat/app';
 
 export default function OfferCard({ clientID, jobID, getOffers }) {
 

@@ -1,10 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next';
-import { useHistory } from 'react-router';
+import { useNavigate } from 'react-router';
 import { auth, db } from '../../../firebase';
 import { subCollection } from '../../../Network/Network';
-import firebase from 'firebase/app';
+import firebase from 'firebase/compat/app';
 
 export default function CreateContract({ location }) {
     const { jobID, talentID } = location.state;
@@ -13,7 +13,7 @@ export default function CreateContract({ location }) {
     const [job, setJob] = useState();
     const [edit, setEdit] = useState({ budget: false, paymentType: false });
     const [done, setDone] = useState(false);
-    const { push } = useHistory();
+    const push = useNavigate();
 
     useEffect(() => {
         db.collection("job")

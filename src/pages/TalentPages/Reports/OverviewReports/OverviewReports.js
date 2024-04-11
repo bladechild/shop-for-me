@@ -6,7 +6,7 @@ import {
   Route,
   NavLink,
   useLocation,
-  useHistory,
+  useNavigate,
 } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Available from "../../../../Components/TalentComponents/Available/Available";
@@ -20,7 +20,7 @@ import { auth, db } from "../../../../firebase";
 
 export default function OverviewReports() {
   const { pathname } = useLocation();
-  const { push } = useHistory();
+  const push = useNavigate();
   pathname === "/overview" && push("/overview/work-in-progress");
   const { t } = useTranslation();
   const inreview = useSelector((state) => state.inreview);

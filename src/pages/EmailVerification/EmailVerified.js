@@ -2,10 +2,10 @@
 import verify from "../../assets/svg/verifyEmail.svg";
 import { auth } from "../../firebase";
 import { useEffect } from "react";
-import { useHistory } from "react-router";
+import { useNavigate } from "react-router";
 
 export default function EmailVerified() {
-  const { push } = useHistory();
+  const push = useNavigate();
   const userr = auth.currentUser;
   userr.reload().then(() => {
     console.log({ emailVerified: userr.emailVerified })

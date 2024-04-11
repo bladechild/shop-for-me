@@ -2,16 +2,17 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { Link, NavLink, useHistory } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import firebaseApp from "../../../firebase";
 import LanguageList from "../../SharedComponents/LanguageBtn/LanguageList";
-import img from "../../../assets/img/icon-user.svg";
+// eslint-disable-next-line import/no-webpack-loader-syntax
+import img from "../../../assets/Img/icon-user.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { clientDataAction } from "../../../Store/actions/clientData";
 
 export default function NavLargScreen() {
   const { t } = useTranslation();
-  const { push } = useHistory();
+  const push = useNavigate();
   const user = useSelector((state) => state.clientData);
   const dispatch = useDispatch();
   useEffect(() => {

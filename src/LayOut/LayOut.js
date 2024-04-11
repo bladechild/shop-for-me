@@ -21,6 +21,7 @@ export default function LayOut() {
 
 
   if (usr) {
+    console.log(usr);
     if (usrType === "talent") {
       return <TalentRoutes />
     } else if (usrType === "client") {
@@ -29,6 +30,7 @@ export default function LayOut() {
       return <Loader />
     }
   } else {
+    console.log("really")
     return <BeforeLoginRoutes />
   }
 }

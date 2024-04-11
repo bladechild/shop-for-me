@@ -14,9 +14,9 @@ import j1 from "../../../assets/svg/jobs1.svg";
 import j2 from "../../../assets/svg/jobs2.svg";
 import j3 from "../../../assets/svg/jobs3.svg";
 import j4 from "../../../assets/svg/jobs4.svg";
-import s1 from "../../../assets/img/jobslide1.jpg";
-import s2 from "../../../assets/img/jobslide2.jpg";
-import s3 from "../../../assets/img/jobslide2.jpg";
+import s1 from "../../../assets/Img/jobslide1.jpg";
+import s2 from "../../../assets/Img/jobslide2.jpg";
+import s3 from "../../../assets/Img/jobslide2.jpg";
 import Loader from "../../SharedComponents/Loader/Loader";
 
 export default function HomeLayout() {
@@ -26,13 +26,15 @@ export default function HomeLayout() {
   const dispatch = useDispatch();
   const [proposals, setProposals] = useState(0);
 
-  useEffect(async () => {
+  useEffect(() => {
+    async function setProposals() {
+      const proposals = await db.collection("job").doc(jobs[0]?.docID).collection("proposals").get()
+      const length = proposals.docs.length;
+      setProposals(length)
+    }
     dispatch(clientDataAction());
     dispatch(clientJobsAction("authID", "==", auth.currentUser.uid));
-    await db.collection("job").doc(jobs[0]?.docID).collection("proposals").get().then(res => {
-      const length = res.docs.length;
-      setProposals(length)
-    })
+    setProposals();
   }, []);
 
 

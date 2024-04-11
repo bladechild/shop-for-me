@@ -1,10 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function JobPostTalentHome() {
 
-  const { push } = useHistory();
+  const push = useNavigate();
 
   const clickHandler = () => {
     push("/job/");

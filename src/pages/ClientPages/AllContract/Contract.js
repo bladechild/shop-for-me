@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
-import { Route, Switch, NavLink } from "react-router-dom";
+import { Route, Routes, NavLink } from "react-router-dom";
 import ContractFeedback from '../../../Components/TalentComponents/ContractFeedback/ContractFeedback';
-import img from "../../../assets/img/icon-user.svg";
+import img from "../../../assets/Img/icon-user.svg";
 import "../../ClientPages/Talent/Talent.css";
 import { useSelector } from "react-redux";
 import StarsRating from "../../../Components/SharedComponents/StarsRating/StarsRating";
@@ -98,14 +98,14 @@ export default function Contract({ location }) {
                             </li>
                         }
                     </ul>
-                    <Switch>
+                    <Routes>
                         <Route path="/contract" exact>
                             <Payment job={job} talent={talent} clientContract={contract} />
                         </Route>
                         <Route path="/contract/feedback" exact>
                             <ContractFeedback job={job} />
                         </Route>
-                    </Switch>
+                    </Routes>
                 </div>
 
             </div>

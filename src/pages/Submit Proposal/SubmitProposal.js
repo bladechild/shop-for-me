@@ -3,10 +3,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect, useState } from "react";
-import { useHistory, useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { useSelector } from "react-redux";
 import { auth, db, storage } from "../../firebase";
-import firebase from 'firebase/app';
+import firebase from 'firebase/compat/app';
 import { subCollection, updateUserData } from "../../Network/Network";
 import { Link } from "react-router-dom";
 import SubmitProposalFixed from "../../Components/TalentComponents/SubmitProposalFixed/SubmitProposalFixed";
@@ -15,7 +15,7 @@ import SubmitProposalHourly from "../../Components/TalentComponents/SubmitPropos
 export default function SubmitProposal() {
   const lang = useSelector(state => state.lang);
   const { id } = useParams();
-  const { push } = useHistory();
+  const push = useNavigate();
   const [job, setjob] = useState({});
   const [user, setuser] = useState({});
   let [proposal, setProposal] = useState("");

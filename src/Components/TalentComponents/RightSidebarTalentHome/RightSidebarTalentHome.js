@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { auth, db } from "../../../firebase";
-import img from "../../../assets/img/icon-user.svg";
+import img from "../../../assets/Img/icon-user.svg";
 import { useSelector } from "react-redux";
 
 export default function RightSidebarTalentHome({  lang }) {

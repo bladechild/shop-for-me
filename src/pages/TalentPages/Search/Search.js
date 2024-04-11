@@ -8,7 +8,6 @@ import { useTranslation } from "react-i18next";
 import { SearchContext } from "../../../Context/SearchContext";
 import searchSvg from "../../../assets/svg/search.svg";
 import SearchBarJobsTalent from "../../../Components/TalentComponents/SearchBarJobsTalent/SearchBarJobsTalent";
-import ShowMore from "react-show-more-button/dist/module";
 import { useDispatch, useSelector } from "react-redux";
 import { talentDataAction } from "../../../Store/actions/talentData";
 import { updateUserData } from "../../../Network/Network";

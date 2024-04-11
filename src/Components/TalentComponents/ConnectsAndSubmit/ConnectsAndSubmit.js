@@ -4,7 +4,7 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { talentDataAction } from "../../../Store/actions/talentData";
 import { updateUserData } from "../../../Network/Network";
 import { db, auth } from "../../../firebase";
@@ -18,7 +18,7 @@ export default function ConnectsAndSubmit() {
   let [proposal, setProposal] = useState("");
   let [talent, setTalent] = useState("");
   const [jobProposal, setjobProposal] = useState(false);
-  const { push } = useHistory();
+  const push = useNavigate();
   const [isliked, setisliked] = useState(false)
 
   useEffect(() => {

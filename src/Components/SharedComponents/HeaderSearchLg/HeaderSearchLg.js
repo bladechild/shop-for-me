@@ -5,7 +5,7 @@ import React, { useContext, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { db } from '../../../firebase';
 import { SearchContext } from '../../../Context/SearchContext';
-import { useHistory } from 'react-router';
+import { useNavigate } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { talentDataAction } from '../../../Store/actions/talentData';
 import { updateUserData } from '../../../Network/Network';
@@ -16,7 +16,7 @@ export default function HeaderSearchLg() {
 
   const { arr, setarr, itemSearchList, setitemSearchList, setsearchList } = useContext(SearchContext)
   const { t } = useTranslation();
-  const { push } = useHistory();
+  const push = useNavigate();
   const user = useSelector((state) => state.talentData);
   const jobs = useSelector((state) => state.jobsData);
   const dispatch = useDispatch();

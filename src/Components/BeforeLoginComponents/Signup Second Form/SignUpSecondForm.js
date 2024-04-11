@@ -1,11 +1,11 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React, { useRef, useState } from "react";
 import { useSelector } from "react-redux";
-import { useHistory } from "react-router";
+import { useNavigate } from "react-router";
 import { auth } from "../../../firebase";
 import { createDocumentWithId } from "../../../Network/Network";
 import { useTranslation } from "react-i18next";
-import firebase from 'firebase/app';
+import firebase from 'firebase/compat/app';
 import CountrySelect from "react-bootstrap-country-select";
 export default function SignUpSecondForm() {
   const { t } = useTranslation();
@@ -14,7 +14,7 @@ export default function SignUpSecondForm() {
   const terms = useRef(null);
   const [country, setCountry] = useState("");
   const userEmail = useSelector(state => state.signUpData.email);
-  const { push } = useHistory();
+  const push = useNavigate();
 
   const [usr, setuser] = useState({
     authID: "",

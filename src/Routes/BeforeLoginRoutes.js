@@ -1,26 +1,26 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
-import HomePage from "../Pages/BeforeLoginPages/HomePage/HomePage";
-import SignUp from "../Pages/BeforeLoginPages/SignUp/SignUp";
-import Login from "./../Pages/BeforeLoginPages/Login/Login";
-import FindFreelancingJob from "../Pages/BeforeLoginPages/FindFreelancingJob/FindFreelancingJob";
-import DevelopmentItTalent from "../Pages/BeforeLoginPages/FindTalent_Development_It_Talent/DevelopmentItTalent";
-import PageNotFoundBeforeLogin from "./../Pages/PageNotFound/PageNotFoundBeforeLogin";
-import SignupDetails from "../Pages/BeforeLoginPages/SignUp Details/SignupDetails";
+import { Routes, Route } from "react-router-dom";
+import HomePage from "../pages/BeforeLoginPages/HomePage/HomePage";
+import SignUp from "../pages/BeforeLoginPages/SignUp/SignUp";
+import Login from "./../pages/BeforeLoginPages/Login/Login";
+import FindFreelancingJob from "../pages/BeforeLoginPages/FindFreelancingJob/FindFreelancingJob";
+import DevelopmentItTalent from "../pages/BeforeLoginPages/FindTalent_Development_It_Talent/DevelopmentItTalent";
+import PageNotFoundBeforeLogin from "./../pages/PageNotFound/PageNotFoundBeforeLogin";
+import SignupDetails from "../pages/BeforeLoginPages/SignUp Details/SignupDetails";
 
 export default function BeforeLoginRoutes() {
   return (
     <>
-      <Switch>
-        <Route path="/" exact component={HomePage} />
-        <Route path="/upwork-clone" exact component={HomePage} />
-        <Route path="/login" exact component={Login} />
-        <Route path="/sign-up" exact component={SignUp} />
-        <Route path="/sign-up/details" exact component={SignupDetails} />
-        <Route path="/freelance-jobs" exact component={FindFreelancingJob} />
-        <Route path="/dev-it" exact component={DevelopmentItTalent} />
-        <Route path="**" component={PageNotFoundBeforeLogin} />
-      </Switch>
+      <Routes>
+        <Route path="/" exact element={<HomePage />} />
+        <Route path="/upwork-clone" exact element={<HomePage />} />
+        <Route path="/login" exact element={<Login />} />
+        <Route path="/sign-up" exact element={<SignUp />} />
+        <Route path="/sign-up/details" exact element={<SignupDetails />} />
+        <Route path="/freelance-jobs" exact element={<FindFreelancingJob />} />
+        <Route path="/dev-it" exact element={<DevelopmentItTalent />} />
+        <Route path="*/*" element={<PageNotFoundBeforeLogin />} />
+      </Routes>
     </>
   );
 }

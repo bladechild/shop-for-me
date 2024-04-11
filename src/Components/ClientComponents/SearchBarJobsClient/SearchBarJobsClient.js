@@ -1,6 +1,6 @@
 import React, { useContext, useEffect} from "react";
 import  { db } from "../../../firebase";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { SearchContext } from "../../../Context/SearchContext";
 
@@ -8,7 +8,7 @@ import { SearchContext } from "../../../Context/SearchContext";
 
 export default function SearchBarJobsClient() {
   const { t } = useTranslation();
-  const { push } = useHistory();
+  const push = useNavigate();
   const { talentSearchList, settalentSearchList, settalentArr,talentArr } = useContext(SearchContext)
   const handle = (e) => {
     settalentSearchList(e.target.value)

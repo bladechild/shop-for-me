@@ -1,15 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import ImgWithActiveStatus from "./../../../Components/ClientComponents/ImgWithActiveStatus/ImgWithActiveStatus";
 import { useDispatch, useSelector } from "react-redux";
-import ShowMore from 'react-show-more-button/dist/module';
+import ShowMore from 'react-show-more-button';
 import { SearchContext } from "../../../Context/SearchContext";
 import { updateUserData } from "../../../Network/Network";
 import { clientDataAction } from "../../../Store/actions/clientData";
 import searchSvg from '../../../assets/svg/search.svg'
 import { Link } from "react-router-dom";
-
-
-
 
 
 export default function TalentCardSearch() {
@@ -20,11 +17,12 @@ export default function TalentCardSearch() {
   console.log(talentArr);
   useEffect(() => {
     dispatch(clientDataAction());
+// eslint-disable-next-line react-hooks/exhaustive-deps
 }, []);
   
   useEffect(() => {
     dispatch(clientDataAction());
-  }, [isliked]);
+  }, [dispatch, isliked]);
 
   const saveTalent = (e, id) => {
     setisliked(!isliked)
@@ -53,7 +51,7 @@ export default function TalentCardSearch() {
 
                             <h6 className="text-center " style={{ color: '#124C82' }}>Please try adjusting your search keywords or filters</h6>
 
-                            <img className='mx-auto d-block' src={searchSvg} />
+                            <img className='mx-auto d-block' src={searchSvg} alt=""/>
 
                         </div>
                         :

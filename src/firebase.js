@@ -1,16 +1,16 @@
-import firebase from "firebase/app";
-import "firebase/auth";
-import "firebase/storage";
-import "firebase/firestore";
+import firebase from "firebase/compat/app";
+import "firebase/compat/auth";
+import "firebase/compat/storage";
+import "firebase/compat/firestore";
 
 const firebaseApp = firebase.initializeApp({
-  apiKey: "AIzaSyBYCGYP-tx6DJKgjd4cNPiYoOC3wNk1cwk",
-  authDomain: "final-project-react-12190.firebaseapp.com",
-  projectId: "final-project-react-12190",
-  storageBucket: "final-project-react-12190.appspot.com",
-  messagingSenderId: "1063777536149",
-  appId: "1:1063777536149:web:ac906c833922665c00739c", 
-  measurementId: "G-8BVMCH1W3X",
+  apiKey: "AIzaSyBQuDacZZl6hP9qEm3pP1TIReIe0uy7Vv4",
+  authDomain: "shop-for-me-43ffe.firebaseapp.com",
+  projectId: "shop-for-me-43ffe",
+  storageBucket: "shop-for-me-43ffe.appspot.com",
+  messagingSenderId: "732408510947",
+  appId: "1:732408510947:web:90ddc9a29d60ef7b5ac8d6",
+  measurementId: "G-09QG0WZJ81"
 });
 
 

@@ -1,7 +1,7 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect, useState } from 'react'
-import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from 'react-redux';
-import ShowMore from 'react-show-more-button/dist/module';
+import ShowMore from 'react-show-more-button';
 import { db } from '../../../firebase';
 import { updateUserData } from '../../../Network/Network';
 import { clientDataAction } from '../../../Store/actions/clientData';
@@ -9,7 +9,6 @@ import ImgWithActiveStatus from '../ImgWithActiveStatus/ImgWithActiveStatus';
 
 
 export default function Saved({ talentId, isliked, setisliked }) {
-  const { t } = useTranslation();
   const [talentSaved, settalentSaved] = useState({});
   const client = useSelector((state) => state.clientData);
   const dispatch = useDispatch();
@@ -22,12 +21,13 @@ export default function Saved({ talentId, isliked, setisliked }) {
       .then((res) => {
         settalentSaved(res.data());
       });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     console.log(talentSaved)
     dispatch(clientDataAction());
-  }, [isliked])
+  }, [dispatch, isliked, talentSaved])
 
 
   const saveTalent = (e, id) => {

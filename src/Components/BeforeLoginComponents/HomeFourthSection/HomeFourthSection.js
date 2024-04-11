@@ -3,8 +3,8 @@
 
 import React from "react";
 import "./HomeFourthSection.css";
-import img1 from "../../../assets/img/cara.webp";
-import img2 from "../../../assets/img/sam.webp";
+import img1 from "../../../assets/Img/cara.webp";
+import img2 from "../../../assets/Img/sam.webp";
 import img3 from "../../../assets/svg/clearly-rated.e51d653.svg";
 import { useTranslation } from "react-i18next";  
 import { useSelector } from "react-redux";

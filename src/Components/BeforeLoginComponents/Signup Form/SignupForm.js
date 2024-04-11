@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import apple from "../../../assets/svg/apple.svg";
 import { signUpAction } from '../../../Store/actions/signUp';
 import { useTranslation } from "react-i18next";  
@@ -11,7 +11,7 @@ export default function SignupForm() {
   const { t }=useTranslation();
 
   const [emailError, setEmailErorr] = useState("");
-  const { push } = useHistory();
+  const push = useNavigate();
   let user = useSelector(state => state.signUpData);
   const dispatch = useDispatch();
 

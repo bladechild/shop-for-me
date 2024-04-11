@@ -2,9 +2,9 @@
 import "./Talent.css";
 import {
   Route,
-  Switch,
+  Routes,
   NavLink,
-  useHistory,
+  useNavigate,
   useLocation,
 } from "react-router-dom";
 import React, { useEffect, useState } from "react";
@@ -30,7 +30,7 @@ export default function Talent() {
   }, [isliked]);
 
   const { pathname } = useLocation();
-  const { push } = useHistory();
+  const push = useNavigate();
   pathname === "/talent" && push("/talent/my-hires");
 
   return (
@@ -69,7 +69,7 @@ export default function Talent() {
               </NavLink>
             </li>
           </ul>
-          <Switch>
+          <Routes>
             {
               pathname === "/talent/searchclient"
               && <SearchClient />
@@ -96,7 +96,7 @@ export default function Talent() {
                 }
             
             </Route>
-          </Switch>
+          </Routes>
         </div>
       </div>
     </div>

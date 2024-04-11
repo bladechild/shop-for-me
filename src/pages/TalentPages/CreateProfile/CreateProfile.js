@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Route, Switch } from 'react-router'
+import { Route, Routes } from 'react-router'
 import CreateProfileAside from '../../../Components/TalentComponents/CreateProfileAside/CreateProfileAside'
 import CreateProfileCategory from '../../../Components/TalentComponents/CreateProfileCategory/CreateProfileCategory'
 import CreateProfileEducationAndEmployment from '../../../Components/TalentComponents/CreateProfileEducationAndEmployment/CreateProfileEducationAndEmployment'
@@ -41,7 +41,7 @@ export default function CreateProfile() {
                         </div>
                     }
                     <div className={pathname === "/create-profile/submit" ? "col-lg-12" : "col-lg-9"}>
-                        <Switch>
+                        <Routes>
                             <Route path="/create-profile" exact>
                                 <CreateProfileGetStart setBtns={setBtns} btns={btns} />
                             </Route>
@@ -75,7 +75,7 @@ export default function CreateProfile() {
                             <Route path="/create-profile/submit" exact>
                                 <CreateProfileSubmit />
                             </Route>
-                        </Switch>
+                        </Routes>
                     </div>
                 </div>
             </div>
