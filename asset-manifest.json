@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/upwork-clone/static/css/main.c74de8cd.css",
-    "main.js": "/upwork-clone/static/js/main.07f3bdfb.js",
+    "main.js": "/upwork-clone/static/js/main.75285a17.js",
     "static/media/VID-20210318-WA0020.mp4": "/upwork-clone/static/media/VID-20210318-WA0020.2d4fc8056b7d41d6fbeb.mp4",
     "static/media/talent-main-section-client-use-upwork-Dev-IT.png": "/upwork-clone/static/media/talent-main-section-client-use-upwork-Dev-IT.b8fdbae39392ca438400.png",
     "static/media/do.svg": "/upwork-clone/static/media/do.d2287a1e1eee0805fc27.svg",
@@ -319,10 +319,10 @@
     "static/media/bd.svg": "/upwork-clone/static/media/bd.0ad8c443ef4d47ea0497.svg",
     "static/media/id.svg": "/upwork-clone/static/media/id.f624e2c8444a7794b357.svg",
     "main.c74de8cd.css.map": "/upwork-clone/static/css/main.c74de8cd.css.map",
-    "main.07f3bdfb.js.map": "/upwork-clone/static/js/main.07f3bdfb.js.map"
+    "main.75285a17.js.map": "/upwork-clone/static/js/main.75285a17.js.map"
   },
   "entrypoints": [
     "static/css/main.c74de8cd.css",
-    "static/js/main.07f3bdfb.js"
+    "static/js/main.75285a17.js"
   ]
 }
