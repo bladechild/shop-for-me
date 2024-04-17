@@ -8,29 +8,25 @@ import Loader from "./../Components/SharedComponents/Loader/Loader";
 
 export default function LayOut() {
   const [usr, setUsr] = useState(null);
-  const [usrType, setUsrType] = useState("");
 
   useEffect(() => {
     auth.onAuthStateChanged(user => {
       if (user) {
         setUsr(user);
-        setUsrType(localStorage.getItem('userType'));
       }
     });
   }, [])
 
 
   if (usr) {
-    console.log(usr);
-    if (usrType === "talent") {
+    if (usr.displayName === "talent") {
       return <TalentRoutes />
-    } else if (usrType === "client") {
+    } else if (usr.displayName === "client") {
       return <ClientRoutes />
     } else {
       return <Loader />
     }
   } else {
-    console.log("really")
     return <BeforeLoginRoutes />
   }
 }

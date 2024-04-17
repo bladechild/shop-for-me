@@ -27,19 +27,19 @@ export default function HomeLayout() {
   const [proposals, setProposals] = useState(0);
 
   useEffect(() => {
-    async function setProposals() {
+    async function asyncSetProposals() {
       const proposals = await db.collection("job").doc(jobs[0]?.docID).collection("proposals").get()
       const length = proposals.docs.length;
       setProposals(length)
     }
+    console.log('called')
     dispatch(clientDataAction());
     dispatch(clientJobsAction("authID", "==", auth.currentUser.uid));
-    setProposals();
+    asyncSetProposals();
   }, []);
 
 
   const job = jobs[0]?.data;
-
   return (
     <>
       {
@@ -97,10 +97,10 @@ export default function HomeLayout() {
                           <div className="text-muted">Messaged</div> */}
                         </div>
                         <div className="d-block col-sm-2 col-xs-3">
-                          {/* <div className="fw-bold">
+                          <div className="fw-bold">
                             <span>{proposals}</span>
                           </div>
-                          <div className="text-muted">Proposals</div> */}
+                          <div className="text-muted">Proposals</div>
                           {/* <div className="fw-bold">{job?.hired}</div>
                           <div className="text-muted">Hired</div> */}
                         </div>

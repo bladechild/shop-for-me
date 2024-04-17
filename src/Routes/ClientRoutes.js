@@ -50,7 +50,7 @@ export default function ClientRoutes() {
           <Route path="/contract" element={<Contract />} />
           <Route path="/email-verification" element={<EmailVerified />} />
           <Route path="/sign-up/please-verify" exact element={<PleaseVerifiy />} />
-          <Route path="/post-job/*" element={<PostJob />} />
+          <Route path="/post-job" exact element={<PostJob />} />
           <Route path="/talent" element={<Talent />} />
           <Route path="/talent-profile/:id" exact element={<TalentProfile />} />
           <Route path="/review-proposal/:id" exact element={<ReviewProposals />} />
