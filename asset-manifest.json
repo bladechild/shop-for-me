@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/shop-for-me/static/css/main.9cd4bdd2.css",
-    "main.js": "/shop-for-me/static/js/main.efcb2a79.js",
+    "main.js": "/shop-for-me/static/js/main.dc955f60.js",
     "static/media/VID-20210318-WA0020.mp4": "/shop-for-me/static/media/VID-20210318-WA0020.2d4fc8056b7d41d6fbeb.mp4",
     "static/media/talent-main-section-client-use-upwork-Dev-IT.png": "/shop-for-me/static/media/talent-main-section-client-use-upwork-Dev-IT.b8fdbae39392ca438400.png",
     "static/media/do.svg": "/shop-for-me/static/media/do.d2287a1e1eee0805fc27.svg",
@@ -319,10 +319,10 @@
     "static/media/bd.svg": "/shop-for-me/static/media/bd.0ad8c443ef4d47ea0497.svg",
     "static/media/id.svg": "/shop-for-me/static/media/id.f624e2c8444a7794b357.svg",
     "main.9cd4bdd2.css.map": "/shop-for-me/static/css/main.9cd4bdd2.css.map",
-    "main.efcb2a79.js.map": "/shop-for-me/static/js/main.efcb2a79.js.map"
+    "main.dc955f60.js.map": "/shop-for-me/static/js/main.dc955f60.js.map"
   },
   "entrypoints": [
     "static/css/main.9cd4bdd2.css",
-    "static/js/main.efcb2a79.js"
+    "static/js/main.dc955f60.js"
   ]
 }
