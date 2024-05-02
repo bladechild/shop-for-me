@@ -27,7 +27,7 @@ export default function JobDetailsTalent() {
   }, [])
 
   const { t } = useTranslation();
-
+  console.log(jobData);
   return (
     <>
       {jobData !== null ?
